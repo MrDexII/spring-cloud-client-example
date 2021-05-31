@@ -3,8 +3,23 @@ spring:
     name: client-hello
   server:
     port: 8080
+  #profiles:
+  #  active: production
+  config:
+    import: configserver:http://localhost:8888
+  cloud:
+    config:
+      name: config-server-client
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: refresh
