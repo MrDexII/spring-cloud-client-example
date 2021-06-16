@@ -23,8 +23,4 @@ public class Controller {
         return this.msg;
     }
 
-    @GetMapping("/test")
-    public String test(Principal principal) {
-        return principal.toString();
-    }
 }
